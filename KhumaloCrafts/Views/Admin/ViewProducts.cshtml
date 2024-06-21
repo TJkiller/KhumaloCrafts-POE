@@ -1,0 +1,61 @@
+﻿@model List<KhumaloCrafts.Models.Products>
+
+<a asp-controller="Admin" asp-action="AdminDashboard" class="btn btn-secondary mb-3">Back</a>
+<h2 class="text-center mb-4">Products</h2>
+
+<table class="table table-hover shadow-sm">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Description</td>
+                <td>@product.Price</td>
+                <td>@product.Category</td>
+                <td>
+                    <a asp-action="EditProduct" asp-route-id="@product.ProductId" class="btn btn-primary btn-sm">Edit</a>
+                    <form asp-action="DeleteProduct" method="post" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this product?');">
+                        <input type="hidden" name="id" value="@product.ProductId" />
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                      
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Admin" asp-action="InsertProduct" class="btn btn-success mt-3">Add New Product</a>
+
+<style>
+    .table {
+        margin-top: 20px;
+        background-color: #fff;
+    }
+    .thead-dark th {
+        background-color: #343a40;
+        color: #fff;
+    }
+    .btn-primary, .btn-danger, .btn-success {
+        border: none;
+    }
+    .btn-primary:hover, .btn-danger:hover, .btn-success:hover {
+        opacity: 0.8;
+    }
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+    }
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+</style>

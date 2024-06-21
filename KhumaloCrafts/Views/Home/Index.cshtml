@@ -1,0 +1,122 @@
+﻿@{
+    ViewData["Title"] = "Welcome To Khumalos Handcrafts work";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2f4f4f; 
+            color: #333;
+        }
+
+        header {
+            background-color: #2f4f4f; 
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+         
+        }
+
+        .hero {
+            background-image: url('images/Backgroundcover1.jpg');
+            background-size: cover;
+            color: #fff;
+            padding: 150px 0;
+            text-align: center;
+        }
+
+            .hero h1 {
+                font-size: 3.5rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+            }
+
+        .content {
+            padding: 60px 0;
+        }
+
+        .card-custom {
+            border: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-custom {
+            background-color: darkslategray; 
+            color: #fff;
+            border-radius: 50px;
+            padding: 10px 30px;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-custom:hover {
+                background-color: darkslategray; 
+                color: white;
+            }
+
+        footer {
+            background-color: #343a40; 
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <div class="hero">
+        <div class="container">
+            <h1>Welcome to KhumaloHandCrafts</h1>
+            <p>Explore Distinctive HandCraft Materials</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="card card-custom text-dark bg-light mb-5">
+                        <div class="card-body text-center">
+                            <h2 class="card-title mb-4">Exquisite Handcrafted Products</h2>
+                            <p class="card-text">
+                                At KhumaloHandCrafts, we believe in the beauty of traditional craftsmanship and the unique character of wood. Each of our handpicked materials is sourced with care, ensuring sustainability and respect for the environment. Whether you're a seasoned woodworker or just beginning your journey into the world of handcrafting, our diverse selection offers something for every project and skill level.
+                                <br><br>
+                                From finely carved hardwoods to rustic reclaimed lumber, our inventory showcases the rich diversity of wood species and textures, allowing you to explore endless possibilities in your creations. Whether you're crafting furniture, sculptures, jewelry, or home decor, KhumaloHandCrafts provides the building blocks for your imagination to flourish.
+                            </p>
+                            <a href="@Url.Action("MyWork", "Home")" class="btn btn-custom">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+            </div>
+        </div>
+    </div>
+
+   
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

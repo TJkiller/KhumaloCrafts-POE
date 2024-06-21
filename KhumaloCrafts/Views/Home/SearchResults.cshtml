@@ -1,0 +1,55 @@
+﻿@model IEnumerable<KhumaloCrafts.Models.Products>
+@{
+    ViewData["Title"] = "Search Results";
+}
+
+<div class="container">
+    <h1 class="text-center mb-4">Search Results</h1>
+
+    @if (!Model.Any())
+    {
+        <p class="text-center">No products found.</p>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 product-card">
+                        <img src="@Url.Content(item.ImageUrl)" class="card-img-top" alt="@item.Name" />
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Name</h5>
+                            <p class="card-text">@item.Description</p>
+                            <p class="card-text">Price: R@item.Price</p>
+                            @if (item.Availability)
+                            {
+                                <p class="card-text text-success">Available</p>
+                            }
+                            else
+                            {
+                                <p class="card-text text-danger">Unavailable</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    
+    <div class="text-center mt-5">
+        <a asp-action="MyWork" asp-controller="Home" class="btn btn-custom">Back to List</a>
+    </div>
+</div>
+
+<!-- Add custom CSS for product card hover effects and animations -->
+<style>
+    .product-card {
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+</style>
